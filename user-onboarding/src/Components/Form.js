@@ -1,10 +1,24 @@
 import React from 'react'
 
 const Form = (props) => {
+    const { change, submit } = props;
+    const { username, email, password, tos } = props.values;
+
+    const onChange = (evt) => {
+        const { name, value, checked, type } = evt.target;
+        const newVal = type === 'checkbox' ? checked : value;
+        change(name, newVal);
+    }
+
+    const onSubmit = (evt) => {
+        evt.preventDefault();
+        submit();
+    }
+
     return (
         <div>
             <h1>Onboarding Form</h1>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>Name:
                     <input
                         type='text'
