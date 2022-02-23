@@ -35,6 +35,7 @@ function App() {
   }
 
   const handleChange = (name, value) => {
+    validate(name, value);
     setFormValues({ ...formValues, [name]: value });
   }
 
