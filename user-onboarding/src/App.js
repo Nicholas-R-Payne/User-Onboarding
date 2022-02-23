@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <Form values={formValues} change={handleChange} />
+      <Form values={formValues} change={handleChange} errors={formErrors} />
     </div>
   );
 }
