@@ -12,9 +12,14 @@ const initialFormValues = {
 
 function App() {
   const [formValues, setFormValues] = useState(initialFormValues);
+
+  const handleChange = (name, value) => {
+    setFormValues({...formValues, [name]: value});
+  }
+
   return (
     <div className="App">
-      <Form values={formValues} />
+      <Form values={formValues} change={handleChange} />
     </div>
   );
 }
