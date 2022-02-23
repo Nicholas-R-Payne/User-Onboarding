@@ -31,6 +31,7 @@ function App() {
         setUsers([ res.data, ...users ])
       })
       .catch(err => console.error(err))
+      .finally(() => setFormValues(initialFormValues))
   }
 
   const validate = (name, value) => {
@@ -50,7 +51,7 @@ function App() {
       <Form values={formValues} change={handleChange} errors={formErrors} submit={handleSubmit} />
       {users.map(user => {
         return (
-          <div>
+          <div key={user.id}>
             <p>{user.createdAt}</p>
             <p>{user.email}</p>
           </div>
