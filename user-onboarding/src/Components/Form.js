@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = (props) => {
     const { change, submit } = props;
-    const { username, email, password, tos } = props.values;
+    const { username, email, password, checked } = props.values;
 
     const onChange = (evt) => {
         const { name, value, checked, type } = evt.target;
