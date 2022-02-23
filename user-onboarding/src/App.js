@@ -12,8 +12,16 @@ const initialFormValues = {
   tos: false
 }
 
+const initialFormErrors = {
+  username: '',
+  password: '',
+  email: '',
+  tos: ''
+}
+
 function App() {
   const [formValues, setFormValues] = useState(initialFormValues);
+  const [formErrors, setFormErrors] = useState(initialFormErrors)
 
   const handleSubmit = () => {
     
