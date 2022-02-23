@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import schema from './Validation/formSchema'
+
 import Form from './Components/Form'
 
 const initialFormValues = {
