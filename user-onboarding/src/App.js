@@ -11,9 +11,10 @@ const initialFormValues = {
 }
 
 function App() {
+  const [formValues, setFormValues] = useState(initialFormValues);
   return (
     <div className="App">
-      <Form />
+      <Form values={formValues} />
     </div>
   );
 }
