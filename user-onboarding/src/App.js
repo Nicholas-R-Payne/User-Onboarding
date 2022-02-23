@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios'
 
 import schema from './Validation/formSchema'
 import * as yup from 'yup'
@@ -24,7 +25,11 @@ function App() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
 
   const handleSubmit = () => {
-    
+    axios.post('https://reqres.in/api/users', formValues)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => console.error(err))
   }
 
   const validate = (name, value) => {
