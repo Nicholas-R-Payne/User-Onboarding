@@ -6,12 +6,8 @@ describe('Form App', () => {
     const usernameInput = () => cy.get('input[name=username]')
     const emailInput = () => cy.get('input[name=email]') 
     const passwordInput = () => cy.get('input[name=password]')
+    const tosCheckbox = () => cy.get('checkbox[name=tos]')
 
-    it('the proper elements are showing', () => {
-        usernameInput().should('exist')
-        emailInput().should('exist')
-        passwordInput().should('exist')
-    })
     it('can type in the inputs', () => {
         usernameInput()
             .should('have.value', '')
