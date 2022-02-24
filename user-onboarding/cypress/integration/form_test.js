@@ -3,12 +3,13 @@ describe('Form App', () => {
         cy.visit('http://localhost:3000')
     })
 
-    const nameInput = () => cy.get('input[name=name]')
+    const usernameInput = () => cy.get('input[name=username]')
     const emailInput = () => cy.get('input[name=email]') 
     const passwordInput = () => cy.get('input[name=password]')
 
     it('the proper elements are showing', () => {
-        nameInput().should('exist')
+        usernameInput().should('exist')
+        emailInput().should('exist')
+        passwordInput().should('exist')
     })
-
 })
