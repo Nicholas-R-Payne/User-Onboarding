@@ -12,4 +12,10 @@ describe('Form App', () => {
         emailInput().should('exist')
         passwordInput().should('exist')
     })
+    it('can type in the inputs', () => {
+        usernameInput()
+            .should('have.value', '')
+            .type('TomRiddle')
+            .should('have.value', 'TomRiddle')
+    })
 })
