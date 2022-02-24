@@ -6,7 +6,8 @@ describe('Form App', () => {
     const usernameInput = () => cy.get('input[name=username]')
     const emailInput = () => cy.get('input[name=email]') 
     const passwordInput = () => cy.get('input[name=password]')
-    const tosCheckbox = () => cy.get('checkbox[name=tos]')
+    const tosCheckbox = () => cy.get('input[name=tos]')
+    console.log(tosCheckbox)
 
     it('can type in the inputs', () => {
         usernameInput()
@@ -21,6 +22,9 @@ describe('Form App', () => {
             .should('have.value', '')
             .type('snapekilleddumbledore')
             .should('have.value', 'snapekilleddumbledore')
-        
+        tosCheckbox()
+            .should('not.be.checked')
+            .check()
+            .should('be.checked')
     })
 })
