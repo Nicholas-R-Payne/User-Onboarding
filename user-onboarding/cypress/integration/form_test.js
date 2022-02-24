@@ -7,6 +7,7 @@ describe('Form App', () => {
     const emailInput = () => cy.get('input[name=email]') 
     const passwordInput = () => cy.get('input[name=password]')
     const tosCheckbox = () => cy.get('input[name=tos]')
+    const createBtn = () => cy.get('input[value="Create a Friend"]')
 
     it('can type in username input', () => {
         usernameInput()
@@ -31,5 +32,14 @@ describe('Form App', () => {
             .should('not.be.checked')
             .check()
             .should('be.checked')
+    })
+    it('can submit the form data', () => {
+        usernameInput().type('TomRiddle')
+        emailInput().type('lordvoldemort1@gmail.com')
+        passwordInput().type('snapekilleddumbledore')
+        tosCheckbox().check()
+        createBtn().click()
+        const newFriend = () => cy.contains('p', 'lordvoldemort1@gmail.com')
+        newFriend().should('exist')
     })
 })
